@@ -1,0 +1,13 @@
+POST http://localhost:1212/ping HTTP/1.1
+content-type: application/json
+
+######
+
+POST https://localhost:1212/user HTTP/1.1
+content-type: text/plain; charset=utf-8
+
+{
+    "age": 10,
+    "name": "some",
+    "phone": "+78934"
+}
