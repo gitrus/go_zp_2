@@ -3,11 +3,23 @@ content-type: application/json
 
 ######
 
-POST https://localhost:1212/user HTTP/1.1
+POST https://localhost:1212/signin HTTP/1.1
 content-type: text/plain; charset=utf-8
 
 {
-    "age": 10,
-    "name": "some",
-    "phone": "+78934"
+    "login": "some",
+    "password": "somr"
 }
+
+
+->
+200 OK
+{
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+    "refresh_token": "dfsdf"
+}
+
+
+GET https://localhost:1212/x HTTP/1.1
+content-type: text/plain; charset=utf-8
+Authorization: Bearer JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c 
